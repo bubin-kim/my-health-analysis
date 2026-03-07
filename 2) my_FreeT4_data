@@ -1,0 +1,24 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv('/content/drive/MyDrive/FreeT4_data.csv')
+
+df['날짜'] = pd.to_datetime(df['날짜'])
+
+plt.figure(figsize=(10, 6))
+
+plt.plot(df['날짜'], df['수치값'], marker='o', linestyle='-', color='#F08080', label='My Free T4')
+
+min_ref = 0.92
+max_ref = 1.68
+plt.fill_between(df['날짜'], 0.92, 1.68, color='lightblue', alpha=0.5, label='Normal Range (0.92~1.68)')
+
+plt.title('9Month Free T4 Variation', fontsize=15)
+plt.xlabel('Month')
+plt.ylabel('Free T4 (ng/dL)')
+plt.legend() # 범례 표시
+plt.grid(True, alpha=0.3)
+
+plt.tight_layout()
+plt.savefig('free_t4_analysis.png')
+plt.show()
