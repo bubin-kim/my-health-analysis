@@ -1,3 +1,3 @@
 # my-health-analysis
-This project analyzes my personal Free T4 levels over 9 months. 
-I used Pandas for data processing and Matplotlib to visualize the trend relative to the normal reference range.
+이 프로젝트는 저의 10개월간의 혈액검사를 기반으로 분석했습니다.  
+Pandas와 Matplotlib를 활용했습니다.  
